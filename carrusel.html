@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrusel</title>
+</head>
+<style>
+    body{
+        margin: 0px;
+    }
+    .carrusel{
+        width: 100px;
+        /* overflow: scroll; */
+        padding: 30px;
+        position: relative;
+    }
+    .carrusel__container{
+        white-space: nowrap;
+        margin: 70px 0px;
+        padding-bottom: 10px;
+    }
+    .carrusel-item{
+        background-color: blue;
+        width: 200px;
+        height: 250px;
+        border-radius: 20px;
+        overflow: hidden;
+        margin-right: 10px;
+        display: inline-block;
+        cursor: pointer;
+        transition: 450ms;
+        transform-origin: center left;
+        position: relative;
+    }
+    .carrusel-item:hover ~ .carrusel-item{
+        transform: translate3d(100px,0,0);
+    }
+    .carrusel__container:hover .carrusel-item{
+        opacity: 0.3;
+    }
+    .carrusel__container:hover .carrusel-item:hover{
+        transform: scale(1.5);
+        opacity: 1;
+    }
+    .carrusel-item__img{
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+    }
+    .carrusel-item__detalles{
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+        font-size: 10px;
+        opacity: 1;
+        transition: 450ms opacity;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+</style>
+<body>
+    <section class="carrusel">
+        <div class="carrusel__container">
+            <div class="carrusel-item">
+                <img class="carrusel-item__img" src="https://images.pexels.com/photos/4922968/pexels-photo-4922968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="imagen">
+                <div class="carrusel-item__detalles">
+                    <div>
+                        <img src="./Iconos/play.png" alt="play">
+                        <img src="./Iconos/play.png" alt="plus">
+                    </div>
+                    <p class="carrusel-item__detalles--titulo">Titulo descriptivo</p>
+                    <p class="carrusel-item__detalles--subtitulo">2019 16+ 114min</p>
+                </div>
+            </div>
+            <div class="carrusel-item"></div>
+        </div>
+    </section>
+</body>
+</html>
